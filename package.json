@@ -1,0 +1,22 @@
+{
+  "name": "@zigzag/core",
+  "version": "0.0.1",
+  "license": "MIT",
+  "scripts": {
+    "lint": "lerna run lint --stream",
+    "start": "lerna run start --stream",
+    "dev": "lerna run dev --stream",
+    "build": "lerna run build --stream",
+    "install:pkg": "lerna exec npm install",
+    "postinstall": "lerna bootstrap"
+  },
+  "devDependencies": {
+    "husky": "^3.0.4",
+    "lerna": "^3.16.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx lerna run --concurrency 1 --stream precommit"
+    }
+  }
+}
